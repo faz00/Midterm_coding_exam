@@ -19,6 +19,8 @@ public static void main(String[] args) {
         map.put(6, "Seattle");
 
 
+        Collection<String> values = map.values();
+        System.out.println("Values in the map: " + values);
 
     }
 

@@ -1,10 +1,12 @@
 package math.problems;
+import java.util.List;
 import java.util.Scanner;
 
 import com.mysql.cj.x.protobuf.MysqlxCrud;
+import databases.ConnectToSqlDB;
 
 public class UnitTestingMath {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //Apply Unit testing into each classes and methods in this package.
         Scanner scanner = new Scanner(System.in);
         int choice;
@@ -48,7 +50,11 @@ public class UnitTestingMath {
                     System.out.println(FindMissingNumber.helper(array));
                     break;
                 case 5:
+                    int  array3[] = new int[]{211,110,99,34,67,89,67,456,321,456,78,90,45,32,56,78,90,54,32,123,67,5,679,54,32,65};
+
+                    LowestNumber l=new LowestNumber();
                     System.out.println("The Lowest number : ");
+                    System.out.println(l.LowestN(array3));
 
                     break;
                 case 6:
@@ -58,11 +64,19 @@ public class UnitTestingMath {
                     break;
                 case 7:
                     System.out.println("The Pattern: ");
-                    int l=100;
-                    Pattern.FindPattern(l);
+                    int size=100;
+                    Pattern.FindPattern(size);
                     break;
                 case 8:
                     System.out.println("The prime Number: ");
+                    ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+                    connectToSqlDB.insertDataFromArrayToSqlTable(PrimeNumber.IsPrime(1000000), "Primenumb", "Numbers");
+                    List<String> numbers = connectToSqlDB.readDataBase("Primenumb", "Numbers");
+
+                    for(String st:numbers){
+                        System.out.print(st+"\t");
+                    }
+                    System.out.println();
                     break;
                 case 9:
                     System.out.println("Goodbye!");

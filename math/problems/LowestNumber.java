@@ -9,6 +9,18 @@ import java.util.List;
 
 public class LowestNumber {
 
+	public static int LowestN(int[] array){
+
+		int lowest = array[0]; // initialize lowest with the first element of array
+
+		for(int i=1; i<array.length; i++) { // start loop from second element of array
+			if (array[i] < lowest) {
+				lowest = array[i];
+			}
+
+		}
+		return lowest;
+	}
 	public static void main(String[] args) {
 		/*
 		 * Write java solution to find the lowest number from this array.
@@ -21,8 +33,8 @@ public class LowestNumber {
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 		List<String> lowestValue = new ArrayList<String>();
 		try {
-			connectToSqlDB.insertDataFromArrayToSqlTable(array, "tbl_lowestNumber", "column_lowestNumber");
-			lowestValue = connectToSqlDB.readDataBase("tbl_lowestNumber", "column_lowestNumber");
+			connectToSqlDB.insertDataFromArrayToSqlTable(array, "tbl_lowestNumber", "LowestN");
+			lowestValue = connectToSqlDB.readDataBase("tbl_lowestNumber", "LowestN");
 
 
 		} catch (Exception e) {
@@ -34,7 +46,9 @@ public class LowestNumber {
 
 		for(String st:lowestValue){
 			System.out.println(st);
+
 		}
+		System.out.println("The lowest number of this array is:"+ LowestN(array));
 	}
 
 }

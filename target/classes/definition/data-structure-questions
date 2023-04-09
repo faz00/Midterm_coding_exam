@@ -1,0 +1,120 @@
+Please answer the below Data Structure Questions:
+
+1. why do we need data structure?
+A.We need data structures to efficiently store, manage, and manipulate data in a way that allows us to access and process it quickly and accurately.
+
+2. What are the various operations that can be performed on different Data Structures?
+The various operations that can be performed on different data structures include:
+ * Insertion: adding a new element to the data structure
+ * Deletion: removing an element from the data structure
+ * Traversal: visiting each element of the data structure in a particular order
+ * Search: finding a specific element in the data structure
+ * Sorting: arranging the elements of the data structure in a specific order
+ * Merging: combining two or more data structures into a single one
+3. List out the areas in which data structures are applied extensively?
+Data structures are applied extensively in various areas such as computer science, engineering, mathematics, economics, finance, medicine, and many others.
+
+4. what is an Array?
+An array is a data structure that stores a fixed-size sequential collection of elements of the same data type.
+
+5. what is the difference between the Array and ArrayList?
+The main difference between an Array and ArrayList is that an Array has a fixed size once it is created, whereas an ArrayList can grow and shrink dynamically as elements are added or removed.
+
+6. what is LinkedList?
+A LinkedList is a linear data structure where elements are stored in a sequence of nodes, and each node contains both the data and a reference to the next node in the sequence.
+
+7. How is an Array different from Linked List?
+An Array is a static data structure where all the elements are stored in contiguous memory locations and accessed by an index, whereas a LinkedList is a dynamic data structure where each element is stored in a separate node with a reference to the next node in the sequence.
+
+8. what is queue?
+A queue is a linear data structure that follows the First In First Out (FIFO) principle, where the element that is inserted first is removed first.
+
+9. what is stack?
+A stack is a linear data structure that follows the Last In First Out (LIFO) principle, where the element that is inserted last is removed first.
+
+10. what is FIFO and LIFO?
+FIFO (First-In-First-Out) and LIFO (Last-In-First-Out) are two commonly used methods for organizing and manipulating data in a collection. In a FIFO data structure, the first element added to the collection will be the first one to be removed. In a LIFO data structure, the last element added to the collection will be the first one to be removed.
+
+11. what is the order of complexity?
+Order of complexity refers to the amount of time and memory resources required by an algorithm to complete a task. It is often expressed in terms of Big O notation, which provides an upper bound on the growth rate of an algorithm as the input size increases.
+
+12. what is the best case to search an element from an array?
+The best case to search an element from an array is when the element is located at the first position of the array, resulting in a time complexity of O(1).
+
+13. what is the worst case to search an element from an array?
+The worst case to search an element from an array is when the element is located at the last position of the array or is not present in the array at all, resulting in a time complexity of O(n).
+
+14. what is tree in data structure?
+A tree is a hierarchical data structure that consists of nodes connected by edges. Each node represents a value, and the edges represent the relationships between the values. Trees are commonly used to represent hierarchical structures, such as the file system of a computer.
+
+15. what is graph in data structure?
+A graph is a non-linear data structure that consists of nodes and edges. Each node represents a value, and each edge represents a relationship between the values. Graphs are commonly used to represent complex systems with many interrelated components, such as social networks, transportation networks, and electrical circuits.
+
+16. what is the difference between the HashTable and HashMap?
+Hashtable and HashMap are both data structures used to store key-value pairs. The main difference between them is that Hashtable is thread-safe and synchronized, while HashMap is not. This makes Hashtable slower than HashMap in most cases, but it is safer to use in a multi-threaded environment.
+
+17. What are the major data structures used in the following areas : RDBMS, Network data model and Hierarchical data model.
+In a relational database management system (RDBMS), the major data structures used are tables, indexes, and views. In a network data model, the major data structures used are records and sets. In a hierarchical data model, the major data structures used are nodes and edges.
+
+18. How HashMap works in java?
+HashMap works by using a hash function to map keys to buckets in an underlying array. When a key-value pair is added to the map, the key is hashed to determine its bucket, and the value is stored in that bucket. If two or more keys hash to the same bucket, a linked list is used to store the key-value pairs in that bucket.
+
+19. What is ArrayIndexOutOfBoundsException in java? When it occurs?
+ArrayIndexOutOfBoundsException is a type of runtime exception that occurs when an attempt is made to access an array element that does not exist. This can happen when an invalid index is used, such as a negative index or an index that is greater than or equal to the length of the array.
+
+20. What are the different ways of copying an array into another array?
+ * We can use a for loop to iterate over the elements of the source array and copy them one by one into the destination array.
+ * We can use the System.arraycopy() method to copy a range of elements from the source array into the destination array.
+ * We can use the Arrays.copyOf() method to copy the entire source array into a new array of the same type and length.
+
+21. What is difference between an array and a linked list?
+ * An array is a fixed-size data structure that stores elements of the same type in contiguous memory locations, whereas a linked list is a dynamic data structure that stores elements of the same type in nodes that are linked together by pointers.
+ * Adding or removing elements in an array requires shifting the existing elements to make room or fill gaps, while adding or removing elements in a linked list involves changing the pointers between nodes.
+ * Accessing an element in an array can be done in constant time by calculating its index, while accessing an element in a linked list requires traversing the list from the beginning or end until the desired element is found.
+
+22. What is DFS and BFS?
+ * DFS stands for Depth-First Search, which is a traversal algorithm that explores as far as possible along each branch before backtracking.
+ * BFS stands for Breadth-First Search, which is a traversal algorithm that explores all the nodes at a given depth before moving on to the next level.
+
+23. What is Recursion?
+ * Recursion is a technique in programming where a function calls itself repeatedly to solve a problem by breaking it down into smaller subproblems.
+ * Recursion can be implemented using a base case that defines the simplest version of the problem, and a recursive case that breaks the problem down into smaller versions of itself until the base case is reached.
+24. What are linear and non linear data Structures?
+ * Linear data structures are those in which the elements are arranged in a linear order, such as arrays, linked lists, stacks, and queues.
+ * Non-linear data structures are those in which the elements are arranged in a non-linear or hierarchical order, such as trees and graphs.
+
+25. What is Big-(O)-notation?
+ * Big-O notation is a mathematical notation used to describe the growth rate or order of complexity of an algorithm.
+ * It provides an upper bound on the worst-case performance of an algorithm as the size of the input increases.
+ * It is commonly used to compare the efficiency of different algorithms and to choose the most appropriate one for a given problem.
+26. Outlined different kind of sorting algorithm with time complexity?
+ * Bubble sort: O(n^2)
+ * Selection sort: O(n^2)
+ * Insertion sort: O(n^2)
+ * Quick sort: O(n log n) on average, O(n^2) in worst case
+ * Merge sort: O(n log n)
+ * Heap sort: O(n log n)
+ * he time complexity of shell sort depends on the gap sequence used. The best-known gap sequence has a time complexity of O(n log^2 n), while the worst-case time complexity is O(n^(4/3)). On average, shell sort has a time complexity of O(n log n).
+ * The time complexity of bucket sort is O(n+k), where n is the number of elements in the input array and k is the range of values in the array. However, the worst-case time complexity can be O(n^2) if the elements are not evenly distributed among the buckets. Therefore, it is important to choose an appropriate number of buckets and a good hashing function to minimize the chance of worst-case scenarios.
+
+
+27. Draw a table with time complexity in which it will summarize all the data structure feature's advantages and disadvantages.
+  a)In terms of Accessing element.
+  b)In terms of Inserting element.
+  c)In terms of Searching element.
+  d)In terms of Removing element.
+
+
+
+
+DataStructure	    Access Time	        Insertion Time	        Search Time	    Removal Time
+Array	            O(1)	                 O(n)	                O(n)	        O(n)
+Linked List	        O(n)	                 O(1)	                O(n)	        O(1)
+Stack	            O(1)	                 O(1)                   O(n)	        O(1)
+Queue	            O(1)	                 O(1)	                O(n)	        O(1)
+Hash Table	        O(1)	                 O(1)	                O(1)	        O(1)
+Binary Search Tree	O(log n)	             O(log n)	            O(log n)	    O(log n)
+AVL Tree	        O(log n)	             O(log n)	            O(log n)	    O(log n)
+B-Tree	            O(log n)	             O(log n)	            O(log n)	    O(log n)
+Heap	            O(1)	                 O(log n)	            O(n)	        O(log n)
+Trie	            O(m)	                 O(m)	                O(m)	        O(m)
