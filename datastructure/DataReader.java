@@ -84,6 +84,7 @@ public class DataReader {
 				//connectToSqlDB.ps.executeUpdate(createTableSQL);
 			try{
 			   ps = connectToSqlDB.connect.prepareStatement(createTableSQL);
+
 			   ps.executeUpdate();
 			}catch (Exception e) {
 
