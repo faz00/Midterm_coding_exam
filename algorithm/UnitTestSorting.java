@@ -13,60 +13,81 @@ public class UnitTestSorting {
         //Create Sort object
         Sort sort = new Sort();
         //apply unsorted array to selectionSort.
+
         sort.selectionSort(unSortedArray);
+
         //verify if the unsorted array is sorted by the selection sort algorithm.
         try {
-            Assert.assertEquals(sortedArray, unSortedArray);
+            System.out.println("Selection: checked" );
+            Assert.assertArrayEquals(sortedArray, unSortedArray);
+
         }catch(Exception ex){
-            ex.getMessage();
+
+            System.out.println("Error on Selection: "+ex.getMessage());
         }
+
 
         //insertion
         sort.insertionSort(unSortedArray);
         try {
-            Assert.assertEquals(sortedArray, unSortedArray);
+            System.out.println("Insertion:checked");
+            Assert.assertArrayEquals(sortedArray, unSortedArray);
         }catch(Exception ex){
-            ex.getMessage();
+           System.out.println("Eror on Insertion:" +ex.getMessage());
         }
         //bubble
         sort.bubbleSort(unSortedArray);
         try {
-            Assert.assertEquals(sortedArray, unSortedArray);
+
+            System.out.println("Bubble:checked");
+            Assert.assertArrayEquals(sortedArray, unSortedArray);
+
         }catch(Exception ex){
             ex.getMessage();
         }
         //merge
         sort.mergeSort(unSortedArray);
         try {
-            Assert.assertEquals(sortedArray, unSortedArray);
+            System.out.println("Merge:checked");
+            Assert.assertArrayEquals(sortedArray, unSortedArray);
+
         }catch(Exception ex){
             ex.getMessage();
         }
         //quick
         sort.quickSort(unSortedArray);
         try {
-            Assert.assertEquals(sortedArray, unSortedArray);
+            System.out.println("Quick:checked");
+            Assert.assertArrayEquals(sortedArray, unSortedArray);
+
         }catch(Exception ex){
             ex.getMessage();
         }
         //heap
         sort.heapSort(unSortedArray);
         try {
-            Assert.assertEquals(sortedArray, unSortedArray);
+            System.out.println("Heap:checked");
+            Assert.assertArrayEquals(sortedArray, unSortedArray);
+
         }catch(Exception ex){
             ex.getMessage();
         }
        // bucket
         sort.bucketSort(unSortedArray);
         try {
-            Assert.assertEquals(sortedArray, unSortedArray);
+            System.out.println("Bucket:checked");
+            Assert.assertArrayEquals(sortedArray, unSortedArray);
+
         }catch(Exception ex){
             ex.getMessage();
         }
         //shell
         sort.shellSort(unSortedArray);
         try {
-            Assert.assertEquals(sortedArray, unSortedArray);
+
+            System.out.println("Shell: checked");
+            Assert.assertArrayEquals(sortedArray, unSortedArray);
+
         }catch(Exception ex){
             ex.getMessage();
         }

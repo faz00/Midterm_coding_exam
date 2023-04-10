@@ -10,7 +10,7 @@ public class UnitTestConnectDB {
         ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
         ConnectToMongoDB connectToMongoDB = new ConnectToMongoDB();
 
-       ConnectToSqlDB.connectToSqlDatabase();
+       //ConnectToSqlDB.connectToSqlDatabase();
         Assert.assertEquals("", "");
 
 

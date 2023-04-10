@@ -6,6 +6,7 @@ import databases.ConnectToSqlDB;
 import java.util.*;
 
 public class Numbers {
+	
 
 	/*
 	 * Show all the different kind of sorting algorithm by applying into (num array).
@@ -20,7 +21,7 @@ public class Numbers {
 	public static void main(String[] args) throws Exception {
 
 		HashMap<String, Long> timeSorting = new HashMap<String, Long>();
-		int [] num = new int[1000000];
+		int [] num = new int[10];
 		storeRandomNumbers(num);
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
@@ -45,7 +46,7 @@ public class Numbers {
 		//Insertion Sort
 		algo.insertionSort(num);
 		long insertionSortExecutionTime = algo.executionTime;
-		timeSorting.put("Insertion",selectionSortExecutionTime );
+		timeSorting.put("Insertion",insertionSortExecutionTime );
 		System.out.println("Total Execution Time of " + num.length + " numbers in Insertion Sort take: " + insertionSortExecutionTime + " milli sec");
 
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "insertion_sort", "SortingNumbers");
@@ -60,7 +61,7 @@ public class Numbers {
 		//bubbleSort
 		algo.bubbleSort(num);
 		long bubbleSortExecutionTime = algo.executionTime;
-		timeSorting.put("Bubble",selectionSortExecutionTime );
+		timeSorting.put("Bubble",bubbleSortExecutionTime );
 		System.out.println("Total Execution Time of " + num.length + " numbers in bubble Sort take: " + bubbleSortExecutionTime + " milli sec");
 
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "bubble_sort", "SortingNumbers");
@@ -73,25 +74,27 @@ public class Numbers {
 
 
 		//mergeSort
-		/*algo.mergeSort(num);
+		algo.mergeSort(num);
 		long mergeSortExecutionTime = algo.executionTime;
-		timeSorting.put("Merge",selectionSortExecutionTime );
+		timeSorting.put("Quick",mergeSortExecutionTime);
 		System.out.println("Total Execution Time of " + num.length + " numbers in merge Sort take: " + mergeSortExecutionTime + " milli sec");
 
-		connectToSqlDB.insertDataFromArrayToSqlTable(num, "merge_sort", "SortingNumbers");
+		connectToSqlDB.insertDataFromArrayToSqlTable(algo.mergeSort(num), "merge_sort", "SortingNumbers");
 		numbers = connectToSqlDB.readDataBase("merge_sort", "SortingNumbers");
 		printValue(numbers);
 
 		n = num.length;
 		randomize (num, n);
-		System.out.println();*/
+		System.out.println();
+
+
 
 
 		//quickSort
 
 		algo.quickSort(num);
 		long quickSortExecutionTime = algo.executionTime;
-		timeSorting.put("Quick",selectionSortExecutionTime );
+		timeSorting.put("Quick",quickSortExecutionTime );
 		System.out.println("Total Execution Time of " + num.length + " numbers in quick Sort take: " + quickSortExecutionTime + " milli sec");
 
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "quick_sort", "SortingNumbers");
@@ -106,7 +109,7 @@ public class Numbers {
 		//heapSort
 		algo.heapSort(num);
 		long heapSortExecutionTime = algo.executionTime;
-		timeSorting.put("Heap",selectionSortExecutionTime );
+		timeSorting.put("Heap",heapSortExecutionTime );
 		System.out.println("Total Execution Time of " + num.length + " numbers in heap Sort take: " + heapSortExecutionTime + " milli sec");
 
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "heap_sort", "SortingNumbers");
@@ -121,7 +124,7 @@ public class Numbers {
 		//bucketSort
 		algo.bucketSort(num);
 		long bucketSortExecutionTime = algo.executionTime;
-		timeSorting.put("Bucket",selectionSortExecutionTime );
+		timeSorting.put("Bucket",bucketSortExecutionTime );
 		System.out.println("Total Execution Time of " + num.length + " numbers in bucket Sort take: " + bucketSortExecutionTime + " milli sec");
 
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "bucket_sort", "SortingNumbers");
@@ -138,7 +141,7 @@ public class Numbers {
 
 		algo.shellSort(num);
 		long shellSortExecutionTime = algo.executionTime;
-		timeSorting.put("Shell",selectionSortExecutionTime );
+		timeSorting.put("Shell",shellSortExecutionTime );
 		System.out.println("Total Execution Time of " + num.length + " numbers in shell Sort take: " + shellSortExecutionTime + " milli sec");
 
 		connectToSqlDB.insertDataFromArrayToSqlTable(num, "shell_sort", "SortingNumbers");
@@ -161,6 +164,8 @@ public class Numbers {
 			num[i] = rand.nextInt(1000000);
 		}
 	}
+
+
 
 	public static void randomize( int arr[], int n) {
 		Random r = new Random();

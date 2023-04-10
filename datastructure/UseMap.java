@@ -1,8 +1,10 @@
 package datastructure;
+import databases.ConnectToSqlDB;
+
 import java.util.*;
 public class UseMap {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		/*
 		 * Demonstrate how to use Map that includes storing and retrieving elements.
 		 * Add List<String> into a Map. Like, Map<String, List<string>> list = new HashMap<String, List<String>>();
@@ -37,6 +39,19 @@ public class UseMap {
 			System.out.println("Key: " + key);
 			System.out.println("Value: " + value);
 		}
+
+
+
+
+		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+		connectToSqlDB.insertDataFromlistToSqlTable( list, "Map", "SortingNumbers");
+		List<String> numbers = connectToSqlDB.readDataBase("Map", "SortingNumbers");
+
+		for(String st:numbers){
+			System.out.print(st+"\t");
+		}
+		System.out.println();
+	}
 	}
 
-}
+
