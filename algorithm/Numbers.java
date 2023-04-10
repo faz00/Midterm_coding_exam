@@ -6,7 +6,7 @@ import databases.ConnectToSqlDB;
 import java.util.*;
 
 public class Numbers {
-	
+
 
 	/*
 	 * Show all the different kind of sorting algorithm by applying into (num array).
@@ -21,7 +21,7 @@ public class Numbers {
 	public static void main(String[] args) throws Exception {
 
 		HashMap<String, Long> timeSorting = new HashMap<String, Long>();
-		int [] num = new int[10];
+		int [] num = new int[100000];
 		storeRandomNumbers(num);
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
