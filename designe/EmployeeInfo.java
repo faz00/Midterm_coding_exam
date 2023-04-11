@@ -1,4 +1,4 @@
-package src.designe;
+package designe;
 import java.util.Scanner;
 public class EmployeeInfo extends AbstractEmployee {
     /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
@@ -22,11 +22,7 @@ public class EmployeeInfo extends AbstractEmployee {
     private String name;
     private String department;
     private int salary;
-    private int yearsWithCompany;
-    static String companyName;
-    private String emailAddress;
-    private String phoneNumber;
-    private String address;
+
 
     public EmployeeInfo(int employeeId) {
         super(employeeId);
@@ -35,14 +31,6 @@ public class EmployeeInfo extends AbstractEmployee {
     public EmployeeInfo(String name, int employeeId) {
         super(name, employeeId);
     }
-    /*
-     * This methods should calculate Employee bonus based on salary and performance.
-     * Then it will return the total yearly bonus. So you need to implement the logic.
-     * Hints: 10% of the salary for best performance, 8% of the salary for average performance and so on.
-     * You can set arbitrary number for performance.
-     * So you probably need to send 2 arguments.
-     *
-     */
 
 
     public int calculateEmployeeBonus(int numberOfYearsWithCompany, int performance) {
@@ -86,9 +74,9 @@ public class EmployeeInfo extends AbstractEmployee {
             if (yearsOfService <= 5) {
                 totalPension = (int) (this.salary * (yearsOfService * 0.05));
             } else if (yearsOfService > 5 && yearsOfService <= 10) {
-                totalPension = (int) (this.salary * ((5 * 0.05) + ((yearsOfService - 5) * 0.10)));
+                totalPension = (int) (this.salary * ((5 * 0.05) + (yearsOfService  * 0.10)));
             } else {
-                totalPension = (int) (this.salary * ((5 * 0.05) + (5 * 0.10) + ((yearsOfService - 10) * 0.20)));
+                totalPension = (int) (this.salary * ((5 * 0.05) + (5 * 0.10) + (yearsOfService * 0.20)));
             }
         }
 
@@ -99,18 +87,16 @@ public class EmployeeInfo extends AbstractEmployee {
     }
     @Override
     public int calculatePerformance() {
-        // implementation for calculating employee performance based on certain criteria
-        // For example, let's assume that performance is calculated based on years with the company and salary
-        int performance = 0;
+         int performance = 0;
 
 
         // Calculate performance based on salary
-        if (salary > 50000) {
-            performance += 3;
-        } else if (salary > 40000) {
-            performance += 2;
-        } else if (salary > 30000) {
-            performance += 1;
+        if (salary >4000) {
+            performance = 3;
+        } else if (salary <= 40000 && salary >3000)  {
+            performance = 2;
+        } else if (salary <= 30000) {
+            performance = 1;
         }
 
         return performance;
@@ -118,9 +104,7 @@ public class EmployeeInfo extends AbstractEmployee {
 
     @Override
     public void assignBenefits() {
-        // implementation for assigning employee benefits based on certain criteria
-        // For example, let's assume that benefits are assigned based on employee's department
-        switch (department) {
+          switch (department) {
             case "IT":
                 System.out.println("Assigned benefits for IT department: Health insurance, Retirement plan");
                 break;
@@ -167,6 +151,18 @@ public class EmployeeInfo extends AbstractEmployee {
 
     public int getEmployeeId() {
         return this.employeeId;
+    }
+
+    public int getSalary() {
+        return this.salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary=salary;
+    }
+
+    public void setDepartment(String  dprt) {
+        this.department=dprt;
     }
 
     private static class DateConversion {

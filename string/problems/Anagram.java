@@ -2,8 +2,8 @@ package string.problems;
 import java.util.Arrays;
 public class Anagram {
          public static Boolean CheckAnagram(String s1 , String s2){
-           //  s1 = s1.toLowerCase().replaceAll("\\s", "");
-            // s2 = s2.toLowerCase().replaceAll("\\s", "");
+             s1 = s1.toLowerCase().replaceAll("\\s", "");
+             s2 = s2.toLowerCase().replaceAll("\\s", "");
 
              // Convert both strings to character arrays and sort them
              char[] s1Chars = s1.toCharArray();

@@ -1,4 +1,4 @@
-package src.designe;
+package designe;
 
 public interface Employee {
     /*Employee is an Interface which contains multiple unimplemented methods.Again few methods

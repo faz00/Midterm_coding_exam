@@ -47,15 +47,13 @@ public class UseArrayList {
 		// Storing all the sorted data into a database
 
 
-		// Sort the ArrayList
+
 		Collections.sort(list);
 
-		// Connect to the database
+
 		ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
-			// Insert the sorted data into the table
-
-			connectToSqlDB.insertDataFromlistToSqlTable(list, "sorted_data", "SortingNumbers");
+		connectToSqlDB.insertDataFromlistToSqlTable(list, "sorted_data", "SortingNumbers");
 
 
 			System.out.println("Sorted data has been stored in the database.");

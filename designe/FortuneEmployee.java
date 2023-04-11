@@ -1,4 +1,4 @@
-package src.designe;
+package designe;
 import databases.ConnectToSqlDB;
 import java.io.IOException;
 import java.sql.*;
@@ -16,51 +16,8 @@ public class FortuneEmployee {
      *
      **/
 
-    public static void saveEmployeeInfo(EmployeeInfo employee) throws IOException, ClassNotFoundException {
-        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
 
-        try
-        {
-            PreparedStatement statement = connectToSqlDB.connect.prepareStatement("INSERT_EMPLOYEE_QUERY");
-            statement.setString(1, employee.getEmployeeName());
-            statement.setInt(2, employee.getEmployeeId());
-            statement.setString(3, employee.getAddress());
-            statement.setString(4, employee.getEmailAddress());
-            statement.setString(5, employee.getPhoneNumber());
-            statement.setInt(6, employee.getYearsWithCompany());
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static EmployeeInfo getEmployeeInfo(int employeeId) {
-        EmployeeInfo employee = null;
-        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-        try
-             {
-                 PreparedStatement statement = connectToSqlDB.connect.prepareStatement("SELECT_EMPLOYEE_QUERY");
-            statement.setInt(1, employeeId);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
-                String employeeName = resultSet.getString("employee_name");
-                String address = resultSet.getString("address");
-                String email = resultSet.getString("email");
-                String phone = resultSet.getString("phone");
-                int yearsWithCompany = resultSet.getInt("years_with_company");
-
-                employee = new EmployeeInfo(employeeName, employeeId);
-                employee.setAddress(address);
-                employee.setEmailAddress(email);
-                employee.setPhoneNumber(phone);
-                employee.setYearsWithCompany(yearsWithCompany);
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return employee;
-    }
-    public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
+        public static void main(String[] args) throws SQLException, IOException, ClassNotFoundException {
 
 
         // Create an instance of EmployeeInfo
@@ -69,6 +26,7 @@ public class FortuneEmployee {
         employee.setEmailAddress("John@Doe.gmail.com");
         employee.setPhoneNumber("777855");
         employee.setYearsWithCompany(8);
+        employee.setDepartment("IT");
 
         // Print employee information
         System.out.println("Employee Information:");
@@ -79,9 +37,11 @@ public class FortuneEmployee {
         int bonus = employee.calculateEmployeeBonus(7, performance);
         System.out.println("Employee Bonus: $" + bonus);
 
+        //Show Benefits of employee
+            employee.assignBenefits();
         // Calculate and print employee pension
-    //    int pension = employee.calculateEmployeePension();
-     //  System.out.println("Employee Pension: $" + pension);
+        int pension = employee.calculateEmployeePension();
+       System.out.println("Employee Pension: $" + pension);
 
 
        //Use any databases[MongoDB, Oracle, MySql] to store data and retrieve data.

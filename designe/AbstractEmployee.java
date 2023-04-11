@@ -1,4 +1,4 @@
-package src.designe;
+package designe;
 import java.util.Scanner;
 public abstract class AbstractEmployee implements Employee{
     private int employeeId;
@@ -11,16 +11,7 @@ public abstract class AbstractEmployee implements Employee{
     private String phoneNumber;
     private String address;
 
-    /*
-     * You must implement the logic for below 2 methods and
-     * following 2 methods are prototype as well for other methods need to be design,
-     * as you will come up with the new ideas.
-     */
 
-    /*
-     * you must have multiple constructors.
-     * Must implement below constructor.
-     */
     public AbstractEmployee(int employeeId) {
         this.employeeId = employeeId;
     }
@@ -30,14 +21,7 @@ public abstract class AbstractEmployee implements Employee{
         this.employeeId = employeeId;
     }
 
-    /*
-     * This methods should calculate Employee bonus based on salary and performance.
-     * Then it will return the total yearly bonus. So you need to implement the logic.
-     * Hints: 10% of the salary for best performance, 8% of the salary for average performance and so on.
-     * You can set arbitrary number for performance.
-     * So you probably need to send 2 arguments.
-     *
-     */
+
     @Override
     public int employeeId() {
         return this.employeeId;
@@ -57,13 +41,19 @@ public abstract class AbstractEmployee implements Employee{
 
     @Override
     public int calculateSalary() {
-        // logic to calculate salary
+
         return this.salary;
     }
 
     @Override
     public void benefitLayout() {
-        // logic for employee benefits layout
+        System.out.println("Employee Benefits Layout for " + name + ":");
+        System.out.println("Salary: $" + salary);
+        System.out.println("Medical Insurance: Provided");
+        System.out.println("Paid Time Off: 15 days/year");
+        System.out.println("Retirement Plan: 401(k) matching up to 5%");
+        System.out.println("Other Benefits: Employee Assistance Program, Flexible Spending Account");
+
     }
 
     @Override
@@ -126,16 +116,10 @@ public abstract class AbstractEmployee implements Employee{
         return (int) (this.salary * (appraisalPercentage / 100.0));
     }
 
-    /*
-     * Abstract method to calculate employee performance based on certain criteria.
-     * This method should be implemented by the concrete child classes.
-     */
+
     public abstract int calculatePerformance();
 
-    /*
-     * Abstract method to assign employee benefits based on certain criteria.
-     * This method should be implemented by the concrete child classes.
-     */
+
     public abstract void assignBenefits();
 
     public void setYearsWithCompany(int years) {

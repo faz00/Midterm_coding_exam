@@ -4,7 +4,7 @@ public class Pattern {
 
 	public static void FindPattern(int n){
 
-		int decreaseBy = 1; // Set the amount to decrease by
+		int decreaseBy = 1;
 
 		// Iterate until the number is less than or equal to 0
 		while (n > 0) {
@@ -31,6 +31,7 @@ public class Pattern {
 		
      int n=100;
 	 FindPattern(100);
+
 
 	}
 }

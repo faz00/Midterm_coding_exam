@@ -185,7 +185,7 @@ public class Sort {
         //implement here
         int n = array.length;
 
-        // Build the initial max heap
+
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(array, n, i);
         }

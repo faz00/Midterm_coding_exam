@@ -29,6 +29,7 @@ public class DetermineLargestWord {
 
         // Iterate through each word in the sentence
         for (String word : words) {
+
             // Remove any punctuation from the word
             word = word.replaceAll("[^a-zA-Z0-9]", "");
 
